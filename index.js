@@ -9,7 +9,7 @@ const { PDFDocument, rgb, degrees } = PDFLib;
 submitBtn.addEventListener("click", () => {
     const val =userName.value;
     if (val.trim() !== "" && userName.checkValidity()) {
-        // console.log(val);
+        console.log(val);
         generatePDF(val);
       } else {
         userName.reportValidity();
@@ -26,11 +26,11 @@ const generatePDF = async (name) => {
 
     
   //get font
-  const fontBytes = await fetch("Sanchez-Regular.ttf").then((res) =>
+  const fontBytes = await fetch("NotoSerifSC-Medium.otf").then((res) =>
   res.arrayBuffer()
 );
   // Embed our custom font in the document
-  const SanChezFont  = await pdfDoc.embedFont(fontBytes);
+  const SerifSCFont  = await pdfDoc.embedFont(fontBytes);
    // Get the first page of the document
    const pages = pdfDoc.getPages();
    const firstPage = pages[0];
@@ -40,7 +40,7 @@ const generatePDF = async (name) => {
      x: 300,
      y: 240,
      size: 40,
-     font: SanChezFont ,
+     font: SerifSCFont ,
      color: rgb(0, 0, 0),
    });
  
