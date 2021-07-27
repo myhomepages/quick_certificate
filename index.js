@@ -38,10 +38,10 @@ const generatePDF = async (name) => {
    // Draw a string of text diagonally across the first page
    firstPage.drawText(name, {
      x: 300,
-     y: 270,
-     size: 58,
+     y: 300,
+     size: 40,
      font: SanChezFont ,
-     color: rgb(0.2, 0.84, 0.67),
+     color: rgb(0, 0, 0),
    });
  
   // Serialize the PDFDocument to bytes (a Uint8Array)
